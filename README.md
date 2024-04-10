@@ -13,21 +13,16 @@ from tech to the best cycling routes.
 
 Happy exploring!
 
-# Project: Social links profile coding challenge
+# Project: Recipe page
 
 [Frontend Mentor](https://www.frontendmentor.io) challenges that help to improve
 coding skills by building realistic projects.
 
-![](./assets/preview.jpg)
+![Design preview for the Recipe page coding challenge](./assets/preview.jpg)
 
 ### Requirements
 
-Build out this social links profile and get it looking as close to the design as
-possible.
-
-Your users should be able to:
-
-- See hover and focus states for all interactive elements on the page
+Build recipe page and get it looking as close to the design as possible.
 
 ### Tech Stack:
 
@@ -37,8 +32,8 @@ Your users should be able to:
 ### Links
 
 - Solution URL:
-  [FrontendMentor Challenge Hub](https://www.frontendmentor.io/challenges/social-links-profile-UG32l9m6dQ/hub)
-- Live Site URL: [GitHub Pages](grifano.github.io/fm-03-social-links-profile/)
+  [FrontendMentor Challenge Hub](https://www.frontendmentor.io/challenges/recipe-page-KiTsR8QQKm/hub)
+- Live Site URL: [GitHub Pages](https://grifano.github.io/fm-04-recipe-page/)
 
 ## Author
 
