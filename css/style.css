@@ -1,0 +1,194 @@
+/*** Fonts ***/
+/* outfit-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400 700;
+  font-stretch: 25% 151%;
+  src: url('../fonts/Inter-VariableFont_slnt\,wght.ttf')
+    format('ttf-variations');
+  src: url('../fonts/Inter-VariableFont_slnt\,wght.ttf') format('ttf')
+    tech('variations');
+}
+
+/*** Variables ***/
+:root {
+  /*** Colors ***/
+  --black: #141414;
+  --dark-grey: #1f1f1f;
+  --grey: #333;
+  --white: #fff;
+  --neon-green: #c4f82a;
+  --black: #141414;
+  --dark-grey: #1f1f1f;
+  --grey: #333;
+  --white: #fff;
+  --neon-green: #c4f82a;
+  /*** Fonts ***/
+  --font-family: 'Inter', sans-serif;
+}
+
+/*** Reset styles ***/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: currentColor;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+address {
+  font-style: normal;
+}
+input,
+textarea {
+  outline: none;
+}
+
+/*** Base Styles ***/
+body {
+  font-family: var(--font-family);
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--white);
+  background-color: var(--black);
+}
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100svh;
+}
+@media screen and (max-width: 768px) {
+  main {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+}
+.container {
+  flex-grow: 1;
+  max-width: 375px;
+  padding: 0 24px;
+}
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 100%;
+    padding: 0;
+  }
+}
+
+/*** Blog Card Component Styles ***/
+.social-card_component {
+  margin: 0 auto;
+  max-width: 327px;
+  padding: 24px;
+  border-radius: 12px;
+  background-color: var(--dark-grey);
+  text-align: center;
+}
+.social-card_avatar {
+  display: inline-block;
+  overflow: hidden;
+  border-radius: 50%;
+  margin-bottom: 24px;
+}
+.social-card_name {
+  font-weight: 600;
+  font-size: 24px;
+  margin-bottom: 4px;
+}
+.social-card_location {
+  font-weight: 700;
+  color: var(--neon-green);
+  margin-bottom: 24px;
+}
+.social-card_role {
+  margin-bottom: 24px;
+}
+.social-card_list {
+}
+.social-card_list-item:not(:last-child) {
+  margin-bottom: 16px;
+}
+.social-card_link {
+  display: block;
+  border-radius: 8px;
+  padding: 12px;
+  background-color: var(--grey);
+  font-weight: 700;
+  color: var(--white);
+  transition: color 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    background-color 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+@media screen and (min-width: 768px) {
+  .social-card_component {
+    max-width: 384px;
+    padding: 40px;
+  }
+  .social-card_link:hover,
+  .social-card_link:focus {
+    color: var(--grey);
+    background-color: var(--neon-green);
+  }
+}
+
+/*** Attribution footer ***/
+.attribution {
+  color: var(--dark-navy);
+  background-color: var(--dark-grey);
+  padding: 16px;
+  text-align: center;
+}
+.attribution_wrap {
+  margin: 0 auto;
+  max-width: 24ch;
+}
+.attribution a {
+  text-decoration: underline;
+  opacity: 0.7;
+  transition: opacity 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.attribution a:hover,
+.attribution a:focus {
+  opacity: 1;
+}
+@media screen and (min-width: 768px) {
+  .attribution {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+  }
+  .attribution_wrap {
+    max-width: 100%;
+  }
+}
