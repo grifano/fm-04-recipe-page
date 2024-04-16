@@ -1,25 +1,34 @@
 /*** Fonts ***/
+/* outfit-regular - latin */
 @font-face {
-  font-display: swap;
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
   font-family: 'Outfit';
   font-style: normal;
-  font-weight: 400 600 700;
-  font-stretch: 25% 151%;
-  src: url('../fonts/outfit/Outfit-VariableFont_wght.ttf')
-    format('ttf-variations');
-  src: url('../fonts/outfit/Outfit-VariableFont_wght.ttf') format('ttf')
-    tech('variations');
+  font-weight: 400;
+  src: url('../fonts/outfit-v11-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* outfit-600 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Outfit';
+  font-style: normal;
+  font-weight: 600;
+  src: url('../fonts/outfit-v11-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* outfit-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Outfit';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../fonts/outfit-v11-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 @font-face {
   font-display: swap;
   font-family: 'Young Serif';
   font-style: normal;
   font-weight: 400;
-  font-stretch: 25% 151%;
-  src: url('../fonts/young-serif/YoungSerif-Regular.ttf')
-    format('ttf-variations');
-  src: url('../fonts/young-serif/YoungSerif-Regular.ttf') format('ttf')
-    tech('variations');
+  src: url('../fonts/young-serif-v2-latin-regular.woff2') format('woff2');
 }
 
 /*** Variables ***/
@@ -61,10 +70,20 @@ p:last-child {
   margin-bottom: 0;
 }
 
-ul {
+ul,
+ol {
   margin: 0;
   padding: 0;
-  list-style: none;
+  padding-left: 24px;
+  /* list-style: none; */
+}
+ul li,
+ol li {
+  padding-left: 16px;
+}
+ul li:not(:last-child),
+ol li:not(:last-child) {
+  margin-bottom: 8px;
 }
 
 a {
@@ -98,92 +117,136 @@ body {
   color: var(--wenge-brown);
   background-color: var(--eggshell);
 }
-main {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100svh;
-}
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 768px) {
   main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding-top: 80px;
     padding-bottom: 80px;
   }
 }
-.container {
-  flex-grow: 1;
-  max-width: 375px;
-  padding: 0 24px;
+.section-divider {
+  display: block;
+  height: 1px;
+  background-color: var(--white-coffee);
+  margin-bottom: 32px;
+}
+
+/*** Recipe Page Component Styles ***/
+.section {
+  margin-bottom: 32px;
+}
+.section-title {
+  font-family: var(--second-family);
+  font-size: 28px;
+  line-height: 1;
+  color: var(--brandy-red);
+  margin-bottom: 24px;
+}
+.recipe-page {
+  background-color: var(--white);
 }
 @media screen and (min-width: 768px) {
-  .container {
-    max-width: 100%;
-    padding: 0;
+  .recipe-page {
+    border-radius: 24px;
+    max-width: 736px;
+    overflow: hidden;
   }
 }
-
-/*** Blog Card Component Styles ***/
-.social-card_component {
-  margin: 0 auto;
-  max-width: 327px;
-  padding: 24px;
-  border-radius: 12px;
-  background-color: var(--dark-grey);
-  text-align: center;
-}
-.social-card_avatar {
-  display: inline-block;
-  overflow: hidden;
-  border-radius: 50%;
-  margin-bottom: 24px;
-}
-.social-card_name {
-  font-weight: 600;
-  font-size: 24px;
-  margin-bottom: 4px;
-}
-.social-card_location {
-  font-weight: 700;
-  color: var(--neon-green);
-  margin-bottom: 24px;
-}
-.social-card_role {
-  margin-bottom: 24px;
-}
-.social-card_list {
-}
-.social-card_list-item:not(:last-child) {
-  margin-bottom: 16px;
-}
-.social-card_link {
+.recipe-header-picture {
   display: block;
-  border-radius: 8px;
-  padding: 12px;
-  background-color: var(--grey);
-  font-weight: 700;
-  color: var(--white);
-  transition: color 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-    background-color 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
-
+.recipe-header-image {
+  width: 100%;
+}
 @media screen and (min-width: 768px) {
-  .social-card_component {
-    max-width: 384px;
+  .recipe-header-picture {
+    padding: 40px 40px 0 40px;
+  }
+  .recipe-header-image {
+    border-radius: 12px;
+  }
+}
+.recipe-wrap {
+  padding: 32px;
+}
+@media screen and (min-width: 768px) {
+  .recipe-wrap {
     padding: 40px;
   }
-  .social-card_link:hover,
-  .social-card_link:focus {
-    color: var(--grey);
-    background-color: var(--neon-green);
+}
+.section-recipe-header {
+  margin-bottom: 32px;
+}
+.recipe-main-heading {
+  font-family: var(--second-family);
+  font-size: 36px;
+  line-height: 1;
+  margin-bottom: 24px;
+  color: var(--dark-charcoal);
+}
+@media screen and (min-width: 768px) {
+  .recipe-main-heading {
+    font-size: 40px;
   }
+}
+.recipe-summary {
+  color: var(--wenge-brown);
+}
+.section-preparation {
+  padding: 24px;
+  background-color: var(--snow);
+}
+.recipe-preparation-title {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1;
+  color: var(--dark-raspberry);
+  margin-bottom: 16px;
+}
+.recipe-preparation-list-item::marker {
+  color: var(--dark-raspberry);
+}
+.recipe-ingredients-list-item::marker {
+  color: var(--brandy-red);
+}
+.recipe-instructions-list-item::marker {
+  font-weight: 700;
+  color: var(--brandy-red);
+}
+.recipe-nutrition-info {
+  margin-bottom: 24px;
+}
+.nutrition-table {
+  width: 100%;
+}
+.nutrition-table tr {
+  display: flex;
+  padding: 12px 32px;
+}
+.nutrition-table tr:not(:last-child) {
+  border-bottom: 1px solid var(--white-coffee);
+}
+.nutrition-table th {
+  flex: 1 1 50%;
+  text-align: left;
+  font-weight: 400;
+}
+.nutrition-table td {
+  flex: 1 1 50%;
+  font-weight: 700;
+  color: var(--brandy-red);
 }
 
 /*** Attribution footer ***/
 .attribution {
-  color: var(--dark-navy);
-  background-color: var(--dark-grey);
+  color: #312e2c;
+  background-color: rgba(255, 255, 255, 0.2);
   padding: 16px;
   text-align: center;
+  backdrop-filter: blur(4px);
 }
 .attribution_wrap {
   margin: 0 auto;
