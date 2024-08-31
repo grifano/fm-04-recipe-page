@@ -32,7 +32,7 @@ Build recipe page and get it looking as close to the design as possible.
 ### Links
 
 - Solution URL:
-  [FrontendMentor Challenge Hub](https://www.frontendmentor.io/challenges/recipe-page-KiTsR8QQKm/hub)
+  [FrontendMentor Solution Hub](https://www.frontendmentor.io/solutions/recipe-page-grifano-sdZ0cCQ2Md)
 - Live Site URL: [GitHub Pages](https://grifano.github.io/fm-04-recipe-page/)
 
 ## Author
